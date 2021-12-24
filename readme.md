@@ -5,4 +5,4 @@
 # 目录
 - 提效工具
   - vscode+github+picgo实现云笔记
-  - 
+  - vscode 自动保存
