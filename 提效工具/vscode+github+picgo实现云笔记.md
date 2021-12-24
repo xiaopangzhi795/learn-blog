@@ -11,3 +11,9 @@
 
 ![v2-e1315b573e56aacf4699aa5ab75aa816_1440w](https://raw.githubusercontent.com/xiaopangzhi795/learn-blog/master/images/v2-e1315b573e56aacf4699aa5ab75aa816_1440w.jpg)
 
+
+# 其他配置
+- github上面创建一个仓库
+- vscode 创建一个文件夹，初始化git
+- 之后所有的文件都保存上传到github上面就可以了。
+- 
