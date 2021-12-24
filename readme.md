@@ -6,3 +6,6 @@
 - 提效工具
   - vscode+github+picgo实现云笔记
   - vscode 自动保存
+
+- git相关
+  - 如何生成ssh秘钥
