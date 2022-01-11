@@ -21,3 +21,11 @@ su es
 ./elasticsearch -d
 ```
 
+## 将host变成0.0.0.0之后启动失败
+> 失败原因：未指定master节点
+> 解决方案：为es指定一个master节点
+```
+network.host: 0.0.0.0
+cluster.initial_master_nodes: ["elasticsearch"]
+
+```

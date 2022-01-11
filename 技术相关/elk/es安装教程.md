@@ -29,6 +29,9 @@ http.cors.allow-origin: "*"
 path.data: /opt/elk/elasticsearch-6.3.0/data
 path.logs: /opt/elk/elasticsearch-6.3.0/logs
 
+//如果要其他机器访问，需要变更一下
+network.host: 0.0.0.0
+cluster.initial_master_nodes: ["elasticsearch"]
 ```
 
 ### 启动es
