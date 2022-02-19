@@ -20,6 +20,10 @@ idea -> preferences -> keymap -> other -> Fix doc comment
 ## 一键优化引用
 
 ## 自动优化引用
+preferences -> editor -> general -> Auto import
+勾选
+- add unambiguous imports on the fly
+- optimize imports on the fly
 
 ## 创建类时，自动生成类doc注释
 
