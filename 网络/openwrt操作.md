@@ -174,6 +174,18 @@ us
 853
 tls
 
+119.28.28.28
+doh.pub/dns-query
+dns.alidns.com/dns-query
+dns.cloudflare.com/dns-query
+1.1.1.1
+1.1.1.1/dns-query
+public.dns.iij.jp/dns-query
+jp.tiar.app/dns-query
+jp.tiarap.org/dns-query
+jp.tiar.app
+dot.tiar.app
+
 - 路由器内网域名解析
   
 address /openwrt.com/192.168.1.254
@@ -182,3 +194,21 @@ address /route.com/10.168.1.1
 ![Jietu20220219-195620](https://raw.githubusercontent.com/xiaopangzhi795/learn-blog/master/images/Jietu20220219-195620.jpg?token=AJTG6CVJZTCEYXBJ6IW37EDCCDNWS)
 
 ![Jietu20220219-195700](https://raw.githubusercontent.com/xiaopangzhi795/learn-blog/master/images/Jietu20220219-195700.jpg?token=AJTG6CTDPKQFUHGGZPZ6FITCCDNWU)
+
+
+# 磁盘扩容
+## 新建磁盘分区
+- 系统 -》 磁盘管理
+- 修改磁盘
+- 新建一个分区
+- 选择ext4
+- 格式化
+
+## 挂载
+- 系统 -》 挂载点
+- 添加挂载点
+- 根据空间大小选择刚才新建的分区
+- 挂载点选择作为外部overlay使用
+
+## 重启路由器
+
