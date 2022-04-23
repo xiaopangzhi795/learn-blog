@@ -43,6 +43,11 @@ echo 'rm' $1
 docker rm $1
 echo 'rm ' $2
 docker rmi $2
+
+## 打标签
+docker tag [镜像id] 【镜像地址】:[版本号]
+## 上传
+docker push [镜像地址]:[版本号]
 ```
 
 # 自定义配置
@@ -89,9 +94,7 @@ docker load < server.tar
 
 # dockerfile
 ```
-FROM server:2
-
-RUN yum install -y net-tools
+FROM registry.cn-beijing.aliyuncs.com/geek45/geek-ksp:v4
 
 USER admin
 
@@ -104,14 +107,7 @@ ENV APP_HOME=${BASE_PATH}/${APP_NAME}
 ENV DEBUG_ENABLE=true
 
 ENV BASE_PATH=${BASE_PATH}
-ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.322.b06-1.el7_9.x86_64/jre
-
-# RUN yum check-update -y
-# RUN yum update
-# RUN yum clean-all -y
-# RUN yum install -y java-1.8.0-openjdk.x86_64
-# RUN yum install -y vim
-
+ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.322.b06-1.el7_9.aarch64/jre
 
 RUN mkdir -p ${APP_HOME}
 RUN mkdir -p ${APP_HOME}/bin
@@ -120,13 +116,24 @@ RUN mkdir -p ${APP_HOME}/target
 RUN mkdir -p ${APP_HOME}/logs
 RUN mkdir -p ${APP_HOME}/logs/java
 
-COPY ${APP_NAME}.jar ${APP_HOME}/target/${APP_NAME}.jar
-COPY start.sh ${APP_HOME}/bin/start.sh
+COPY ./build/${APP_NAME}.jar ${APP_HOME}/target/${APP_NAME}.jar
 COPY ./bin/* ${APP_HOME}/bin
+COPY ./start_do.sh /home/admin/start_do.sh
 
 EXPOSE 10081
 
-# ENTRYPOINT ["sh", "-c" ,"${APP_HOME}/bin/appctl"]
+ENTRYPOINT ["/bin/bash"]
+CMD ["/home/admin/start_do.sh"]
+
+```
+
+# docker运行脚本
+```
+#!/bin/bash
+${APP_NAME}/bin/appctl.sh start
+
+## 保持docker运行不退出
+exec /bin/bash
 ```
 
 # 检查项目启动
