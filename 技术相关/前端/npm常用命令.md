@@ -89,3 +89,32 @@ npm uninstall --save lodash
 # 全局包
 npm uninstall -g jshint
 ```
+
+
+
+# npm拓展命令
+
+```shell
+# 查看版本
+npm -v
+# 查看所有命令
+npm help
+# 查看某个命令的详细信息
+npm help uninstall
+# 查看各个命令的简单用法
+npm l
+# npm配置
+npm config list -l
+npm config get init.author.name
+# 修改npm配置
+npm config set init.author.name maomao
+# 删除npm配置
+npm config delete init.author.name
+
+# npm搜索模块
+npm search [模块名] [-g]
+## 别名
+find / s / se
+
+```
+
